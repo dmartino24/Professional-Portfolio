@@ -53,27 +53,31 @@ section {
 }
 /* Intro */
 .intro {
+    display: flex;
     text-align: center;    
     background-color: var(--primary-color);
+    justify-content: center;
+    align-items: center;
 }
-.secondary-title {
-    text-align: center;
-    color: var(--text-color);
-    font-size: 36px;
-    
-}
+
 
 .intro img {
     width: 300px;
 }
-/* About */
-
-.about h1 {
-    margin-bottom: 20px;
+.flex-col {
+    display: flex;
+    flex-direction: column;
+    height: 400px;
 }
-.about p {
-    text-align: center;
-    
+.col {
+    padding: 30px;
+    height: 100%;
+}
+
+.col ul li {
+    font-size: 20px;
+    padding-bottom: 10px;
+    list-style-type: none;
 }
 /* Project */
 .project {
@@ -86,6 +90,7 @@ section {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    align-items: center;
 }
 
 .project-container {
@@ -101,7 +106,6 @@ section {
 .project-container img {
     width: 100%;
 }
-
 
 .project-container:hover {
     bottom: 8px;
@@ -151,6 +155,12 @@ footer {
 
 }
 /* Utilities */
+.secondary-title {
+    text-align: center;
+    color: var(--text-color);
+    font-size: 48px;
+    padding-bottom: 20px;
+}
 
 /* Media Phones */
 @media all and (max-width: 575px){
