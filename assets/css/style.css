@@ -1,8 +1,8 @@
 :root {
-    --primary-color: #e4572e;
-    --secondary-color: #17bebb;
-    --tertiary-color: #76b041;
-    --text-color: #2e282a;
+    --primary-color: #051521;
+    --secondary-color: #001f33;
+    --text-color: #199892;
+    --header-color: #deba93;
 }
 * {
     margin: 0;
@@ -18,7 +18,12 @@ body {
 h2 {
     font-size: 48px;
 }
-
+p {
+    color: #fff;
+}
+a {
+    position: relative;
+  }
 /* Header */
 header {
     padding: 20px 35px;
@@ -26,9 +31,17 @@ header {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
 }
 header h1 {
+    padding: 10px 15px;
+    font-weight: bold;
     font-size: 36px;
+    margin: 0;
+    text-shadow: 0 0 10px rgba(0, 0, 0, .5);
 }
 header a {
     text-decoration: none;
@@ -44,10 +57,9 @@ header nav ul {
     align-items: center;
     list-style: none;
 }
-header nav ul li a {
-    padding: 10px 15px;
-    font-size: 18px;
-}
+
+    
+
 section {
     padding: 60px;
 }
@@ -56,10 +68,9 @@ section {
     display: flex;
     text-align: center;    
     background-color: var(--primary-color);
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 }
-
 
 .intro img {
     width: 300px;
@@ -67,7 +78,7 @@ section {
 .flex-col {
     display: flex;
     flex-direction: column;
-    height: 400px;
+  
 }
 .col {
     padding: 30px;
@@ -80,12 +91,6 @@ section {
     list-style-type: none;
 }
 /* Project */
-.project {
-    background-color: var(--tertiary-color);
-}
-.project h2 {
-    text-align: center;
-}
 .projects {
     display: flex;
     justify-content: center;
@@ -117,7 +122,7 @@ section {
     left: 8px;
     padding: 15px;
     font-size: 32px;
-    background-color: var(--primary-color);
+    background-color: var(--text-color);
 
 }
 .secondary-text {
@@ -126,17 +131,22 @@ section {
     bottom: 8px;
     padding: 15px;
     font-size: 32px;
-    background-color: var(--secondary-color);
+    background-color: var(--text-color);
 }
 /* Contact/footer */
 footer {
     display: flex;
-    justify-content: space-between;
+    justify-content:space-evenly;
+    align-items: center;
     flex-wrap: wrap;
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
     width: 100%;
     padding: 40px 35px;
     
+}
+
+footer a {
+    color:var(--text-color)
 }
 
 @media all and (max-width: 1400px){
@@ -155,11 +165,47 @@ footer {
 
 }
 /* Utilities */
+.primary-title {
+    text-align: center;
+    color: var(--header-color);
+    font-size: 64px;
+    margin: 0 auto 35px auto;
+    width: 50%; 
+    border-bottom: 5px solid var(--header-color);
+}
 .secondary-title {
     text-align: center;
-    color: var(--text-color);
+    color: var(--header-color);
     font-size: 48px;
-    padding-bottom: 20px;
+    margin: 0 auto 35px auto;
+    width: 50%;  
+    border-bottom: 2px solid var(--header-color); 
+}
+.underline-effect {
+    text-decoration: none;
+padding: 10px 15px;
+font-size: lighter;
+font-size: 36px;
+text-shadow: 0 0 10px rgba(0, 0, 0, .5);
+}
+
+.underline-effect::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  border-radius: 4px;
+  background-color: var(--header-color);
+  bottom: 0;
+  left: 0;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform .3s ease-in-out;
+}
+
+.underline-effect:hover::before {
+transform-origin: left;
+transform: scaleX(1);
 }
 
 /* Media Phones */
