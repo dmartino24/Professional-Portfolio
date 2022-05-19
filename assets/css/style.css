@@ -14,12 +14,17 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: var(--secondary-color);
 }
+section {
+    padding: 60px;
+}
 
 h2 {
     font-size: 48px;
 }
 p {
     color: #fff;
+    line-height: 1.6;
+    font-size: 21px;
 }
 a {
     position: relative;
@@ -57,12 +62,6 @@ header nav ul {
     align-items: center;
     list-style: none;
 }
-
-    
-
-section {
-    padding: 60px;
-}
 /* Intro */
 .intro {
     display: flex;
@@ -71,14 +70,13 @@ section {
     justify-content: space-around;
     align-items: center;
 }
-
 .intro img {
     width: 300px;
 }
 .flex-col {
     display: flex;
     flex-direction: column;
-  
+    width: 40%;
 }
 .col {
     padding: 30px;
@@ -86,7 +84,7 @@ section {
 }
 
 .col ul li {
-    font-size: 20px;
+    font-size: 28px;
     padding-bottom: 10px;
     list-style-type: none;
 }
@@ -96,8 +94,8 @@ section {
     justify-content: center;
     flex-wrap: wrap;
     align-items: center;
+    
 }
-
 .project-container {
     position: relative;
     text-align: center;
@@ -107,6 +105,7 @@ section {
 }
 .project-container:first-child {
     width: 100%;
+    
 }
 .project-container img {
     width: 100%;
@@ -123,7 +122,6 @@ section {
     padding: 15px;
     font-size: 32px;
     background-color: var(--text-color);
-
 }
 .secondary-text {
     position: absolute;
@@ -136,33 +134,18 @@ section {
 /* Contact/footer */
 footer {
     display: flex;
-    justify-content:space-evenly;
+    justify-content:space-around;
     align-items: center;
     flex-wrap: wrap;
     background-color: var(--primary-color);
     width: 100%;
-    padding: 40px 35px;
-    
+    padding: 40px 35px;   
 }
-
-footer a {
-    color:var(--text-color)
-}
-
-@media all and (max-width: 1400px){
-
-}
-/* Media Tablets */
-@media all and (max-width: 768px){
-    header h1 {
-        width: 100%;
-        text-align: center;
-
-    }
-    header nav {
-        width: 100%;
-    }
-
+footer a { 
+    color:var(--text-color);
+    padding: 10px 15px;
+    font-size: 36px;
+    text-shadow: 0 0 10px rgba(0, 0, 0, .5);
 }
 /* Utilities */
 .primary-title {
@@ -181,14 +164,12 @@ footer a {
     width: 50%;  
     border-bottom: 2px solid var(--header-color); 
 }
-.underline-effect {
+.nav-text {
     text-decoration: none;
-padding: 10px 15px;
-font-size: lighter;
-font-size: 36px;
-text-shadow: 0 0 10px rgba(0, 0, 0, .5);
+    padding: 10px 20px;
+    font-size: 36px;
+    text-shadow: 0 0 10px rgba(0, 0, 0, .5);
 }
-
 .underline-effect::before {
   content: '';
   position: absolute;
@@ -202,16 +183,99 @@ text-shadow: 0 0 10px rgba(0, 0, 0, .5);
   transform: scaleX(0);
   transition: transform .3s ease-in-out;
 }
-
 .underline-effect:hover::before {
 transform-origin: left;
 transform: scaleX(1);
 }
-
-/* Media Phones */
-@media all and (max-width: 575px){
-    
-    .hero-about h2, .hero-profile h2{
-        margin: 0 10px 20px 10px;
+/* Medium smaller desktop screens */
+@media all and (max-width: 980px){
+    section {
+        padding: 30px 15px;
     }
+    header h1 {
+        width: 100%;
+        text-align: center;
+    }
+    header nav {
+        width: 100%;
+    }
+    .intro {
+        flex-direction: column;
+    }
+    
+    .flex-col {
+        width: 100%;
+    }
+    footer {
+        justify-content:center;
+        
+    }
+    footer h2 {
+        text-align: center;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .nav-text {
+        font-size: 24px;
+    }
+}
+/* Media Tablets */
+@media all and (max-width: 768px){
+    footer {
+        padding-top: 15px;
+    }
+    footer ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .primary-text {
+        padding: 5px;
+        font-size: 24px;
+    }
+    .secondary-text {
+        padding: 5px;
+        font-size: 24px;
+    }
+}
+/* Phones */
+@media all and (max-width: 575px){
+    header nav ul {
+        margin-top: 20px;
+        justify-content: center;
+    }
+    p {
+        font-size: 16px;
+    }
+    .nav-text {
+        font-size: 16px;
+        text-align: center;
+    }
+    .underline-effect::before {
+        width: 0%;
+    }
+    .primary-title {
+        font-size: 32px;
+        margin: 0 auto 5px auto;
+        width: 75%;  
+        border-bottom: 2px solid var(--header-color);
+    }
+    .secondary-title {
+        text-align: center;
+        color: var(--header-color);
+        font-size: 28px;
+        margin: 0 auto 10px auto;
+        width: 75%;  
+        border-bottom: 2px solid var(--header-color); 
+    }
+    .primary-text {
+        padding: 0px;
+        font-size: 16px;
+        background-color: transparent;
+    }
+    .secondary-text {
+        padding: 0px;
+        font-size: 16px;
+        background-color: transparent;
+    }  
 }
